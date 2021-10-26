@@ -3,8 +3,7 @@ import jax.numpy as jnp
 import numpy as np
 
 def relu(x):
-	stacked = jnp.stack([x, jnp.zeros(x.shape)], axis=0)
-	return jnp.max(stacked, axis=0)
+	return jnp.maximum(x, 0.)
 
 def layer(theta_l, x):
 	W = theta_l[0]
